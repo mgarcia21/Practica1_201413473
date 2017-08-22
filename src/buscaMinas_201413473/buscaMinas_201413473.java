@@ -13,6 +13,14 @@ public class buscaMinas_201413473 {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Maynor Rolando Garcia Castro \n201413473 \nIPC 'A' Practica 1 \nBuscaminas!");
+        matrix();
+        
+    }
+        public static void matrix(){
+                    System.out.println("Maynor Rolando Garcia Castro \n201413473 \nIPC 'A' Practica 1 \nBuscaminas!");
+
+
+        
     }
     
 }
