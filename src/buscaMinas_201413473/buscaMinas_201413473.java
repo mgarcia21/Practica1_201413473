@@ -101,7 +101,7 @@ public class buscaMinas_201413473 {
                      for (int j = 0; j < 4; j++) {
                         for (int i = 0; i < 4; i++) {
                             matriz[Cx - 1][Cy - 1] = "o";
-                            System.out.print(mfantasma[i][j]);
+                            System.out.print(matriz[i][j]);
                         }
                         System.out.print("\n");
                     }
@@ -114,7 +114,7 @@ public class buscaMinas_201413473 {
                     break;
                 case 2:
                     vida=false;
-                    System.out.println("\n  cua-cua, ya perdiste Parce");
+                    System.out.println("\n Perdiste");
                                      System.exit(0);
                     break;
                 case 3:
@@ -140,9 +140,10 @@ public class buscaMinas_201413473 {
             }
            }
                     }else if(opcion.equals("r" )){     
-                               System.out.println("\n presionaste r");
+                               matrix();
                     }else if(opcion.equals("s")){
-                               System.out.println("\n presionaste s");
+                                                       System.out.println("\n Gracias por habe jugado!");
+
                     }else{
                                System.out.println("\n porfavor selecciona una de las opciones anteriores");
                                            matrix();
@@ -153,8 +154,8 @@ public class buscaMinas_201413473 {
                 cantidad = 6;
                 String matrizb[][] = new String[6][6];
                            int mfantasmab[][] = new int[6][6];
-                           int[] xxb = new int[14];
-                           int[] yyb = new int[14];
+                           int[] xxb = new int[6];
+                           int[] yyb = new int[6];
                 int bomba2[] = {1,1,1,1,1, 2,2,2,2,2, 3,3,3,3,3, 4,4,4,4,4};
                 for (int i = 0; i < cantidad; i++) {
                        int x =(int)(Math.random()*6+0);
@@ -167,20 +168,101 @@ public class buscaMinas_201413473 {
                 }
                 for (int j = 0; j < 6; j++) {
                     for (int i = 0; i < 6; i++) {
-                        System.out.print(mfantasmab[i][j]);
+                        System.out.print(matrizb[i][j]);
                     }
                     System.out.print("\n");
                 }
                 System.out.println("");
-                for (int j = 0; j < 5; j++) {
-            for (int i = 0; i < 15; i++) {
+                for (int j = 0; j < 6; j++) {
+            for (int i = 0; i < 6; i++) {
                 matrizb[i][j] = "*";
                 System.out.print(matrizb[i][j]);
             }
 
             System.out.print("\n");
+        } Scanner scb = new Scanner(System.in);
+                     String opcionb;
+                   try{
+                    System.out.print("Voltear: v \nReiniciar:r \nSalir:s \nIngresar Opcion en minuscula:");           
+                    opcion = scb.next();
+        }catch (Exception e){
+            System.out.println("\nPorfavor ingresar números no letras");
+            matrix();
+            opcion = scb.next();
         }
+                   if(opcion.equals("v")){
+                       boolean vida = true;        
+                       while (vida) {
+            int Cy, Cx;
+            System.out.println("\n");
+            System.out.println("Ingresa las coordenadas ->[fila (Y), columna (X)]<-");
+            
+            try{
+                System.out.print("Ingrese Y: ");
+                Cy = sc.nextInt();
+                System.out.print("Ingrese x: ");
+                Cx = sc.nextInt();
+            }catch (Exception e){
+                System.out.println("\n Ingresar solamente numeros");
+                System.out.println(" (X) no debe exceder de 4 y (Y) no debe exceder de 4");
+                Cy=sc.nextInt();
+                Cx=sc.nextInt();
+                System.exit(0);
+            }
+                        
+            switch(mfantasmab[Cx-1][Cy-1]){
+                case 0:
+                    System.out.println("\n  vas bien"); 
+                     for (int j = 0; j < 6; j++) {
+                        for (int i = 0; i < 6; i++) {
+                            matrizb[Cx - 1][Cy - 1] = "o";
+                            System.out.print(matrizb[i][j]);
+                        }
+                        System.out.print("\n");
+                    }
+                    break;
+                case 1:
+                    vida=false;
+                    System.out.println("\n  Perdiste ");
+                     System.exit(0);
+               
+                    break;
+                case 2:
+                    vida=false;
+                    System.out.println("\n Perdiste");
+                                     System.exit(0);
+                    break;
+                case 3:
+                    vida=true;
+                    for (int j = 0; j < 6; j++) {
+                        for (int i = 0; i < 6; i++) {
+                            matrizb[Cx - 1][Cy - 1] = "o";
+                            System.out.print(matrizb[i][j]);
+                        }
+                        System.out.print("\n");
+                    }
+                    break;
+                case 4:
+                  
+                    for (int j = 0; j < 6; j++) {
+                        for (int i = 0; i < 6; i++) {
+                            matrizb[Cx - 1][Cy - 1] = "o";
+                            System.out.print(matrizb[i][j]);
+                        }
+                        System.out.print("\n");
+                    }
+                    break;
+            }
+           }
+                    }else if(opcion.equals("r" )){     
+                               matrix();
+                    }else if(opcion.equals("s")){
+                                                       System.out.println("\n Gracias por habe jugado!");
 
+                    }else{
+                               System.out.println("\n porfavor selecciona una de las opciones anteriores");
+                                           matrix();
+                                          }
                 break;
                 case 3:
                 cantidad = 8;
@@ -200,7 +282,7 @@ public class buscaMinas_201413473 {
                 }
                 for (int j = 0; j < 8; j++) {
                     for (int i = 0; i < 8; i++) {
-                        System.out.print(mfantasmac[i][j]);
+                        System.out.print(matrizc[i][j]);
                     }
                     System.out.print("\n");
                 }
@@ -212,7 +294,89 @@ public class buscaMinas_201413473 {
             }
 
             System.out.print("\n");
+        } Scanner scc = new Scanner(System.in);
+                     String opcionc;
+                   try{
+                    System.out.print("Voltear: v \nReiniciar:r \nSalir:s \nIngresar Opcion en minuscula:");           
+                    opcion = scc.next();
+        }catch (Exception e){
+            System.out.println("\nPorfavor ingresar números no letras");
+            matrix();
+            opcion = scc.next();
         }
+                   if(opcion.equals("v")){
+                       boolean vida = true;        
+                       while (vida) {
+            int Cy, Cx;
+            System.out.println("\n");
+            System.out.println("Ingresa las coordenadas ->[fila (Y), columna (X)]<-");
+            
+            try{
+                System.out.print("Ingrese Y: ");
+                Cy = sc.nextInt();
+                System.out.print("Ingrese x: ");
+                Cx = sc.nextInt();
+            }catch (Exception e){
+                System.out.println("\n Ingresar solamente numeros");
+                System.out.println(" (X) no debe exceder de 4 y (Y) no debe exceder de 4");
+                Cy=sc.nextInt();
+                Cx=sc.nextInt();
+                System.exit(0);
+            }
+                        
+            switch(mfantasmac[Cx-1][Cy-1]){
+                case 0:
+                    System.out.println("\n  vas bien"); 
+                     for (int j = 0; j < 8; j++) {
+                        for (int i = 0; i < 8; i++) {
+                            matrizc[Cx - 1][Cy - 1] = "o";
+                            System.out.print(matrizc[i][j]);
+                        }
+                        System.out.print("\n");
+                    }
+                    break;
+                case 1:
+                    vida=false;
+                    System.out.println("\n  Perdiste ");
+                     System.exit(0);
+               
+                    break;
+                case 2:
+                    vida=false;
+                    System.out.println("\n Perdiste");
+                                     System.exit(0);
+                    break;
+                case 3:
+                    vida=true;
+                    for (int j = 0; j < 8; j++) {
+                        for (int i = 0; i < 8; i++) {
+                            matrizc[Cx - 1][Cy - 1] = "o";
+                            System.out.print(matrizc[i][j]);
+                        }
+                        System.out.print("\n");
+                    }
+                    break;
+                case 4:
+                  
+                    for (int j = 0; j < 8; j++) {
+                        for (int i = 0; i < 8; i++) {
+                            matrizc[Cx - 1][Cy - 1] = "o";
+                            System.out.print(matrizc[i][j]);
+                        }
+                        System.out.print("\n");
+                    }
+                    break;
+            }
+           }
+                    }else if(opcion.equals("r" )){     
+                               matrix();
+                    }else if(opcion.equals("s")){
+                                                       System.out.println("\n Gracias por habe jugado!");
+
+                    }else{
+                               System.out.println("\n porfavor selecciona una de las opciones anteriores");
+                                           matrix();
+                                          }
                 break;
                 }
                    
