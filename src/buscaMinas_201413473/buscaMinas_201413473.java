@@ -65,6 +65,26 @@ public class buscaMinas_201413473 {
             }
             System.out.print("\n");
         }            
+                     Scanner sca = new Scanner(System.in);
+                     String opcion;
+                   try{
+                    System.out.print("Voltear: v \nReiniciar:r \nSalir:s \nIngresar Opcion en minuscula:");           
+                    opcion = sca.next();
+        }catch (Exception e){
+            System.out.println("\nPorfavor ingresar números no letras");
+            matrix();
+            opcion = sca.next();
+        }
+                   if(opcion.equals("v")){
+                               System.out.println("\nPresionaste v");
+                    }else if(opcion.equals("r" )){     
+                               System.out.println("\n presionaste r");
+                    }else if(opcion.equals("s")){
+                               System.out.println("\n presionaste s");
+                    }else{
+                               System.out.println("\n porfavor selecciona una de las opciones anteriores");
+                                           matrix();
+                                          }
                 break;
                 
                 case 2:
