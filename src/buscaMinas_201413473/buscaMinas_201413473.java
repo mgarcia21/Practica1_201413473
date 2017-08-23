@@ -76,7 +76,69 @@ public class buscaMinas_201413473 {
             opcion = sca.next();
         }
                    if(opcion.equals("v")){
-                               System.out.println("\nPresionaste v");
+                       boolean vida = true;        
+                       while (vida) {
+            int Cy, Cx;
+            System.out.println("\n");
+            System.out.println("Ingresa las coordenadas ->[fila (Y), columna (X)]<-");
+            
+            try{
+                System.out.print("Ingrese Y: ");
+                Cy = sc.nextInt();
+                System.out.print("Ingrese x: ");
+                Cx = sc.nextInt();
+            }catch (Exception e){
+                System.out.println("\n Ingresar solamente numeros");
+                System.out.println(" (X) no debe exceder de 4 y (Y) no debe exceder de 4");
+                Cy=sc.nextInt();
+                Cx=sc.nextInt();
+                System.exit(0);
+            }
+                        
+            switch(mfantasma[Cx-1][Cy-1]){
+                case 0:
+                    System.out.println("\n  vas bien"); 
+                     for (int j = 0; j < 4; j++) {
+                        for (int i = 0; i < 4; i++) {
+                            matriz[Cx - 1][Cy - 1] = "o";
+                            System.out.print(mfantasma[i][j]);
+                        }
+                        System.out.print("\n");
+                    }
+                    break;
+                case 1:
+                    vida=false;
+                    System.out.println("\n  Perdiste ");
+                     System.exit(0);
+               
+                    break;
+                case 2:
+                    vida=false;
+                    System.out.println("\n  cua-cua, ya perdiste Parce");
+                                     System.exit(0);
+                    break;
+                case 3:
+                    vida=true;
+                    for (int j = 0; j < 4; j++) {
+                        for (int i = 0; i < 4; i++) {
+                            matriz[Cx - 1][Cy - 1] = "o";
+                            System.out.print(matriz[i][j]);
+                        }
+                        System.out.print("\n");
+                    }
+                    break;
+                case 4:
+                  
+                    for (int j = 0; j < 4; j++) {
+                        for (int i = 0; i < 4; i++) {
+                            matriz[Cx - 1][Cy - 1] = "o";
+                            System.out.print(matriz[i][j]);
+                        }
+                        System.out.print("\n");
+                    }
+                    break;
+            }
+           }
                     }else if(opcion.equals("r" )){     
                                System.out.println("\n presionaste r");
                     }else if(opcion.equals("s")){
