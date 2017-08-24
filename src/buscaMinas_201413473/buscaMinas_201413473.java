@@ -2,7 +2,6 @@
 package buscaMinas_201413473;
 
 import java.util.Scanner;
-import static javafx.scene.input.KeyCode.R;
 
 /**
  *
@@ -39,8 +38,8 @@ public class buscaMinas_201413473 {
                            cantidad = 4;
                            String matriz[][] = new String[4][4];
                            int mfantasma[][] = new int[4][4];
-                           int[] xx = new int[14];
-                           int[] yy = new int[14];
+                           int[] xx = new int[4];
+                           int[] yy = new int[4];
                            int bomba [] ={1,1,1,1, 2,2,2,2, 3,3,3,3, 4,4,4,4 };
                            for (int i = 0; i < cantidad; i++){
                            int x = (int)(Math.random()*4+0);
@@ -102,19 +101,36 @@ public class buscaMinas_201413473 {
                         for (int i = 0; i < 4; i++) {
                             matriz[Cx - 1][Cy - 1] = "o";
                             System.out.print(matriz[i][j]);
+                       
                         }
                         System.out.print("\n");
                     }
                     break;
                 case 1:
-                    vida=false;
-                    System.out.println("\n  Perdiste ");
+                      System.out.println("\n  Perdiste, la solución era \n ");
+                      for (int j = 0; j < 4; j++) {
+                        for (int i = 0; i < 4; i++) {
+                            matriz[Cx - 1][Cy - 1] = "o";
+                            System.out.print(mfantasma[i][j]);
+                       
+                        }
+                        System.out.print("\n");
+                    }
+
+
                      System.exit(0);
                
                     break;
                 case 2:
-                    vida=false;
-                    System.out.println("\n Perdiste");
+                       System.out.println("\n  Perdiste, la solución era \n ");
+                      for (int j = 0; j < 4; j++) {
+                        for (int i = 0; i < 4; i++) {
+                            matriz[Cx - 1][Cy - 1] = "o";
+                            System.out.print(mfantasma[i][j]);
+                       
+                        }
+                        System.out.print("\n");
+                    }
                                      System.exit(0);
                     break;
                 case 3:
@@ -142,7 +158,7 @@ public class buscaMinas_201413473 {
                     }else if(opcion.equals("r" )){     
                                matrix();
                     }else if(opcion.equals("s")){
-                                                       System.out.println("\n Gracias por habe jugado!");
+                                                       System.out.println("\n Gracias por haber jugado!");
 
                     }else{
                                System.out.println("\n porfavor selecciona una de las opciones anteriores");
@@ -204,7 +220,7 @@ public class buscaMinas_201413473 {
                 Cx = sc.nextInt();
             }catch (Exception e){
                 System.out.println("\n Ingresar solamente numeros");
-                System.out.println(" (X) no debe exceder de 4 y (Y) no debe exceder de 4");
+                System.out.println(" (X) no debe exceder de 6 y (Y) no debe exceder de 6");
                 Cy=sc.nextInt();
                 Cx=sc.nextInt();
                 System.exit(0);
@@ -222,14 +238,28 @@ public class buscaMinas_201413473 {
                     }
                     break;
                 case 1:
-                    vida=false;
-                    System.out.println("\n  Perdiste ");
+                     System.out.println("\n  Perdiste, la solución era \n ");
+                      for (int j = 0; j < 6; j++) {
+                        for (int i = 0; i < 4; i++) {
+                            matrizb[Cx - 1][Cy - 1] = "o";
+                            System.out.print(mfantasmab[i][j]);
+                       
+                        }
+                        System.out.print("\n");
+                    }
                      System.exit(0);
                
                     break;
                 case 2:
-                    vida=false;
-                    System.out.println("\n Perdiste");
+                     System.out.println("\n  Perdiste, la solución era \n ");
+                      for (int j = 0; j < 6; j++) {
+                        for (int i = 0; i < 6; i++) {
+                            matrizb[Cx - 1][Cy - 1] = "o";
+                            System.out.print(mfantasmab[i][j]);
+                       
+                        }
+                        System.out.print("\n");
+                    }
                                      System.exit(0);
                     break;
                 case 3:
@@ -268,8 +298,8 @@ public class buscaMinas_201413473 {
                 cantidad = 8;
                 String matrizc[][] = new String[8][8];
                            int mfantasmac[][] = new int[8][8];
-                           int[] xxc = new int[14];
-                           int[] yyc = new int[14];
+                           int[] xxc = new int[8];
+                           int[] yyc = new int[8];
                 int bomba3[] = {1,1,1,1,1, 2,2,2,2,2, 3,3,3,3,3, 4,4,4,4,4};
                 for (int i = 0; i < cantidad; i++) {
                        int x =(int)(Math.random()*8+0);
@@ -336,14 +366,28 @@ public class buscaMinas_201413473 {
                     }
                     break;
                 case 1:
-                    vida=false;
-                    System.out.println("\n  Perdiste ");
+                 System.out.println("\n  Perdiste, la solución era \n ");
+                      for (int j = 0; j < 8; j++) {
+                        for (int i = 0; i < 4; i++) {
+                            matrizc[Cx - 1][Cy - 1] = "o";
+                            System.out.print(mfantasmac[i][j]);
+                       
+                        }
+                        System.out.print("\n");
+                    }
                      System.exit(0);
                
                     break;
                 case 2:
-                    vida=false;
-                    System.out.println("\n Perdiste");
+                  System.out.println("\n  Perdiste, la solución era \n ");
+                      for (int j = 0; j < 8; j++) {
+                        for (int i = 0; i < 8; i++) {
+                            matrizc[Cx - 1][Cy - 1] = "o";
+                            System.out.print(mfantasmac[i][j]);
+                       
+                        }
+                        System.out.print("\n");
+                    }
                                      System.exit(0);
                     break;
                 case 3:
